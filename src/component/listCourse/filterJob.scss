@@ -1,0 +1,36 @@
+
+
+.filter-job{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    overflow: hidden; /* giảm thiểu hiển thị góc vuông bên trong */
+
+}
+
+.text-filter{
+    background-color: #F0FAF9;
+    color: #9DCDCD;
+    padding: 4px;
+    cursor: pointer;
+    flex-grow: 1;
+    align-self: stretch; 
+}
+
+.close-filter{
+    background-color: #5FA49F;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    padding: 4px;
+    width: 30px;
+    align-self: stretch;/* phản ánh border-radius */
+
+}
+
+.close-filter:hover{
+    background-color: #293C3A;
+}

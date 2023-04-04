@@ -1,0 +1,146 @@
+
+
+.item{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: #FFFFFF;
+   margin-bottom: 20px;
+   padding: 20px;
+   border-radius: 5px;
+   border-left: 4px solid #5DA5A4;
+   box-shadow:  29px 29px 86px #cacaca,
+   -29px -29px 86px #f6f6f6;
+    
+}
+
+.item:first-child {
+margin-top: 50px;
+}
+
+.item-left{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.information{
+    margin-left: 20px;
+
+}
+.info-heading{
+    display: flex;
+    margin-right: 10px;
+   align-items: center;
+    
+}
+
+.name-company{
+    color: #5DA5A4;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+.node-new{
+    margin-right: 15px;
+    padding: 2px;
+    width: 50px;
+    background-color: #5DA5A4;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.node-feature{
+    background-color: #0D0D0D;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    width: 72px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 10px;
+}
+.position{
+    color: #0D0D0D;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+
+
+}
+
+.description{
+    display: flex;
+}
+
+.desc-info{
+    color: #333;
+    opacity: 0.6;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.stack{
+    color: #333;
+    opacity: 0.6;
+    font-weight: 700;
+    margin-right:10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+//  Item-right
+.item-right{
+    display: flex;
+    margin-right: 20px;
+}
+
+
+
+.node-data{
+    background-color: #f3f7f7;
+    margin-left: 10px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #5DA5A4;
+}
+
+.node-data:hover{
+    background-color: #62A0A3;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
