@@ -3,6 +3,8 @@ import "./jobForm.scss";
 import Section from "./Section";
 
 function JobForm(props) {
+  const { backBtn, saveBtn } = props;
+  console.log("props :>> ", props);
   return (
     <div className="wrapper" style={{ height: "100vh" }}>
       <div className="inputForm">
@@ -12,7 +14,6 @@ function JobForm(props) {
             title="id"
             inputType="text"
             value={props.value.id}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "id")}
             fileName="id"
           />
@@ -20,7 +21,6 @@ function JobForm(props) {
             title="company"
             inputType="text"
             value={props.value.company}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "company")}
             fileName="company"
           />
@@ -28,7 +28,6 @@ function JobForm(props) {
             title="logo"
             inputType="text"
             value={props.value.logo}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "logo")}
             fileName="logo"
           />
@@ -36,7 +35,6 @@ function JobForm(props) {
             title="new"
             inputType="checkbox"
             value={props.value.new}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "new")}
             fileName="new"
           />
@@ -44,7 +42,6 @@ function JobForm(props) {
             title="featured"
             inputType="checkbox"
             value={props.value.featured}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "featured")}
             fileName="featured"
           />
@@ -52,7 +49,6 @@ function JobForm(props) {
             title="position"
             inputType="text"
             value={props.value.position}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "position")}
             fileName="position"
           />
@@ -60,7 +56,6 @@ function JobForm(props) {
             title="role"
             inputType="text"
             value={props.value.role}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "role")}
             fileName="role"
           />
@@ -68,7 +63,6 @@ function JobForm(props) {
             title="level"
             inputType="text"
             value={props.value.level}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "level")}
             fileName="level"
           />
@@ -76,7 +70,6 @@ function JobForm(props) {
             title="postedAt"
             inputType="text"
             value={props.value.postedAt}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "postedAt")}
             fileName="postedAt"
           />
@@ -84,7 +77,6 @@ function JobForm(props) {
             title="contract"
             inputType="text"
             value={props.value.contract}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "contract")}
             fileName="contract"
           />
@@ -92,7 +84,6 @@ function JobForm(props) {
             title="location"
             inputType="text"
             value={props.value.location}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "location")}
             fileName="location"
           />
@@ -100,7 +91,6 @@ function JobForm(props) {
             title="languages"
             inputType="text"
             value={props.value.languages}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "languages")}
             fileName="languages"
           />
@@ -109,10 +99,21 @@ function JobForm(props) {
             title="tools"
             inputType="text"
             value={props.value.tools}
-            // onChange = {props.handleChange}
             onChange={(e) => props.handleChange(e, "tools")}
             fileName="tools"
           />
+        </div>
+        <div className="btn">
+          {backBtn && (
+            <button className="btn-submit" onClick={props.handleBack}>
+              {backBtn}
+            </button>
+          )}
+          {saveBtn && (
+            <button className="btn-save" onClick={props.handelEventSubmit}>
+              {saveBtn}
+            </button>
+          )}
         </div>
       </div>
     </div>

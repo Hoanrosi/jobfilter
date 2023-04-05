@@ -6,8 +6,6 @@ import ListItems from "./component/listCourse/listItems";
 import InputForm from "./component/InputForm/InputForm";
 import RenderDetail from "./component/RenderDetail/RenderDetail";
 import data from "../src/component/data.json";
-import Test from "./component/InputForm/Test";
-import TestDetail from "./component/RenderDetail/TestDetail";
 function App() {
   const [isCreated, setIsCreated] = useState(false);
   const [listData, setListData] = useState(data);
@@ -45,7 +43,7 @@ function App() {
         </Layout>
       ) : dataDetail ? (
         <Layout>
-          <TestDetail
+          <RenderDetail
             dataDetail={dataDetail}
             handleBack={handleBack}
             handleSave={handleSave}
@@ -55,7 +53,7 @@ function App() {
         </Layout>
       ) : (
         <Layout>
-          <Test handleSubmit={handleSubmit} setListData={setListData} />
+          <InputForm handleSubmit={handleSubmit} setListData={setListData} />
         </Layout>
       )}
     </div>

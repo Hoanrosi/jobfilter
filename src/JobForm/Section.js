@@ -2,7 +2,7 @@ import React from "react";
 import "./section.scss";
 
 function Section(props) {
-  console.log(props);
+  console.log("props.value :>> ", props.value);
   return (
     <div className="title-info">
       <div className="title">
@@ -16,15 +16,19 @@ function Section(props) {
             onChange={props.onChange}
           />
         ) : (
-          <lable className="toggle">
+          <label className={`toggle ${props.value ? "active" : ""}`}>
+            {console.log("props.value", props.value, typeof props.value)}
             <input
               type="checkbox"
-              value={props.value}
-              onChange={props.onChange}
+              checked={props.value}
+              onChange={(e) => {
+                props.onChange(e);
+                console.log("abc");
+              }}
               name={props.fileName}
             />
             <span className="slider"></span>
-          </lable>
+          </label>
         )}
       </div>
     </div>
