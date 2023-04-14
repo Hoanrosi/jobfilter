@@ -5,7 +5,6 @@ function RenderDetail({
   dataDetail,
   handleBack,
   handleSave,
-  handleSubmit,
   listData,
   setListData = () => {},
 }) {
@@ -29,8 +28,7 @@ function RenderDetail({
     cloneData[itemIdx] = detail;
     // set new data to list
     setListData(cloneData);
-    handleSubmit()
-    // handleSave();
+    handleSave();
   };
 
   return (

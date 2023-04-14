@@ -6,44 +6,47 @@ import ListItems from "./component/listCourse/listItems";
 import InputForm from "./component/InputForm/InputForm";
 import RenderDetail from "./component/RenderDetail/RenderDetail";
 import data from "../src/component/data.json";
-import { PAGE_TYPE } from "./variables/common";
-
 function App() {
+  const [isCreated, setIsCreated] = useState(false);
   const [listData, setListData] = useState(data);
   const [dataDetail, setDataDetail] = useState(null);
-  const [pageType, setPageType] = useState(PAGE_TYPE.LIST);
-
+  const [detail, setDetail] = useState(null);
+  const [pageType, setPageType] = useState("listItem");
   const handleCreate = () => {
+    setIsCreated(true);
     setPageType("create");
   };
 
+  const handleSubmit = () => {
+    setIsCreated(false);
+    setPageType("edit");
+  };
+  //====================== handleBack ================
   const handleBack = () => {
+    setIsCreated(false);
     setDataDetail(null);
-    setPageType("listItem"); // Quay lại trang danh sách
   };
 
+  // ======================= handleSave =============
   const handleSave = () => {
+    setIsCreated(false);
     setDataDetail(null);
-    setPageType("listItem"); // Quay lại trang danh sách
   };
 
-  let content;
-  switch (pageType) {
-    case PAGE_TYPE.LIST:
-      content = (
+  //============= Render PageType =================
+
+  return (
+    <div className="App">
+      {!isCreated && !dataDetail ? (
         <Layout>
           <ListItems
             listData={listData}
             handleCreate={handleCreate}
             setListData={setListData}
             setDataDetail={setDataDetail}
-            setPageType={setPageType}
           />
         </Layout>
-      );
-      break;
-    case "detail":
-      content = (
+      ) : dataDetail ? (
         <Layout>
           <RenderDetail
             dataDetail={dataDetail}
@@ -53,20 +56,13 @@ function App() {
             setListData={setListData}
           />
         </Layout>
-      );
-      break;
-    case "create":
-      content = (
+      ) : (
         <Layout>
-          <InputForm setListData={setListData} handleSave={handleSave} />
+          <InputForm handleSubmit={handleSubmit} setListData={setListData} />
         </Layout>
-      );
-      break;
-    default:
-      content = null;
-  }
-
-  return <div className="App">{content}</div>;
+      )}
+    </div>
+  );
 }
 
 export default App;

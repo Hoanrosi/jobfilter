@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./listItems.scss";
 import Item from "./item";
 import FilterJob from "./filterJob";
-import RenderDetail from "../RenderDetail/RenderDetail";
 
-function ListItems({ listData, setListData, setDataDetail, handleCreate }) {
+function ListItems({
+  listData,
+  setListData,
+  setDataDetail,
+  handleCreate,
+  setPageType,
+}) {
   const [filters, setFilters] = useState([]);
-  const [listDataFilter,setListDataFilter] = useState([]);
+  const [listDataFilter, setListDataFilter] = useState([]);
   const filteredList = [];
   const handleEvent = (e) => {
     e.preventDefault();
@@ -16,15 +21,6 @@ function ListItems({ listData, setListData, setDataDetail, handleCreate }) {
   const handleTagClick = (item) => {
     console.log("ajsajhsgahs", item);
     setFilters((prev) => [...prev, item]);
-    // listData.filter((itemData) => {
-    //   if(itemData.role === item || itemData.level=== item || itemData.languages.includes(item) || itemData.tools === item){
-    //     filteredList.push(itemData)
-    //   }
-    //   // if(itemData.role === item && itemData.level=== item  && itemData.languages=== item &&  itemData.tools === item){
-    //   //   filteredList.push(itemData)
-    //   // }
-    // });
-    // setListData(filteredList);
   };
   // ======================= handleDelete ==========================
 
@@ -63,11 +59,12 @@ function ListItems({ listData, setListData, setDataDetail, handleCreate }) {
 
   // ======================== handleDetail =====================
 
-  const handleDetail = (itemData) =>{
-    setDataDetail(itemData)
+  const handleDetail = (itemData) => {
+    setDataDetail(itemData);
+    setPageType("detail");
 
-    console.log("setDataDetail:>>>>", setDataDetail)
-  }
+    console.log("setDataDetail:>>>>", setDataDetail);
+  };
 
   return (
     <div className="wrapper">
@@ -101,7 +98,7 @@ function ListItems({ listData, setListData, setDataDetail, handleCreate }) {
               itemData={itemData}
               key={itemData.id}
               handleTagClick={handleTagClick}
-              handleDetail = {handleDetail}
+              handleDetail={handleDetail}
             />
           );
         })}

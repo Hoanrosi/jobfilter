@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import JobForm from "../../JobForm/JobForm";
 
-function InputForm({ handleSubmit, setListData }) {
+function InputForm({ handleSubmit, setListData, handleSave }) {
   const [inputForm, setInputForm] = useState({
     id: "",
     company: "",
@@ -41,7 +41,8 @@ function InputForm({ handleSubmit, setListData }) {
       },
       ...prev,
     ]);
-    handleSubmit();
+    // handleSubmit();
+    handleSave();
   };
 
   return (
